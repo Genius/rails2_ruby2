@@ -1,13 +1,9 @@
 module ActiveRecord
   module Associations
     class AssociationProxy
-      def send(method, *args)
-        if proxy_respond_to?(method, true)
-          super
-        else
-          load_target
-          @target.send(method, *args)
-        end
+      def proxy_respond_to?(method, include_all = false)
+        Object.instance_method(:respond_to?).bind(self).call(method, include_all) ||
+          (!include_all && Object.instance_method(:protected_methods).bind(self).call.include?(method))
       end
 
       private
@@ -21,6 +17,14 @@ module ActiveRecord
             super
           end
         end
+      end
+    end
+
+    class AssociationCollection < AssociationProxy
+      def proxy_respond_to?(method, include_all = false)
+        super ||
+          @reflection.klass.respond_to?(method, include_all) ||
+          (!include_all && @reflection.klass.protected_methods.include?(method))
       end
     end
   end
