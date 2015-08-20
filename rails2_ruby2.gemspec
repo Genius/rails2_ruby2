@@ -6,22 +6,16 @@ require 'rails2_ruby2/version'
 Gem::Specification.new do |spec|
   spec.name          = "rails2_ruby2"
   spec.version       = Rails2Ruby2::VERSION
-  spec.authors       = ["Andrew Warner"]
-  spec.email         = ["wwarner.andrew@gmail.com"]
+  spec.authors       = ["Andrew Warner", "Mat Brown"]
+  spec.email         = ["andrew@genius.com", "mat@genius.com"]
 
-  spec.summary       = %q{Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{Write a longer description or delete this line.}
-  spec.homepage      = "http://doesntexistrightnow.edu"
+  spec.summary       = %q{Patches to run rails 2 with ruby 2}
+  spec.description   = %q{Patches to run rails 2 with ruby 2}
+  spec.homepage      = "https://github.com/Genius/rails2_ruby2"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = "exe"
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."
-  end
 
   spec.add_development_dependency "bundler", "~> 1.8"
   spec.add_development_dependency "rake", "~> 10.0"
