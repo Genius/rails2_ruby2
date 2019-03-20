@@ -1,7 +1,3 @@
-when_library_loaded('ActiveRecord', :version_file => 'active_record/version') do
-  # require 'rails2_ruby2/downcase_patch'
-end
-
 when_library_loaded('ActiveSupport', :version_file => 'active_support/version') do
   # require 'rails2_ruby2/i18n_patch'
   # require 'rails2_ruby2/slice_patch'
