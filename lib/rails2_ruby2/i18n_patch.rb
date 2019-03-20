@@ -1,3 +1,5 @@
+# This patch will no longer be necessary at Rails 3.2. See commit message
+# for more information.
 I18n::Backend::Base.class_eval do
   def load_file(filename)
     type = File.extname(filename).tr('.', '').downcase
