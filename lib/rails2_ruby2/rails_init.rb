@@ -13,7 +13,7 @@ when_library_loaded('ActiveSupport', :version_file => 'active_support/version') 
   # require 'rails2_ruby2/slice_patch'
   # require 'rails2_ruby2/tzinfo_patch'
   # require 'rails2_ruby2/time_zone_patch'
-  # require 'rails2_ruby2/compressed_memcached_store_patch'
+  require 'rails2_ruby2/compressed_memcached_store_patch'
   # require 'rails2_ruby2/nokogirisax_patch'
   # require 'rails2_ruby2/core_ext/string'
   # require 'rails2_ruby2/erb_util_silence'
