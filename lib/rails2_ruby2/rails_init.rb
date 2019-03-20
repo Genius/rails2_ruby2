@@ -7,5 +7,4 @@ end
 when_library_loaded('ActionController',
    :lib_const_string => 'ActionPack', :version_file => 'action_pack/version') do
   require 'rails2_ruby2/named_route_collection_patch'
-  # require 'rails2_ruby2/action_controller_perform_action_patch'
 end
