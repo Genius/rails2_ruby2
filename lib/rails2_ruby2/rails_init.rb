@@ -8,3 +8,7 @@ when_library_loaded('ActionController',
    :lib_const_string => 'ActionPack', :version_file => 'action_pack/version') do
   require 'rails2_ruby2/named_route_collection_patch'
 end
+
+when_library_loaded('ActiveRecord', :version_file => 'active_record/version') do
+  require 'rails2_ruby2/active_record/postgresql_adapter'
+end
