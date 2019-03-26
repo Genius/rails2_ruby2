@@ -5,3 +5,9 @@ ActiveRecord::ConnectionAdapters::SchemaStatements.module_eval do
     migrated.map { |v| "INSERT INTO #{sm_table} (version) VALUES ('#{v}');" }.join("\n\n")
   end
 end
+
+ActiveRecord::ConnectionAdapters::PostgreSQLAdapter.class_eval do
+  def schema_search_path
+    @schema_search_path ||= query('SHOW search_path')[0][0].split(',').map(&:strip).join(',')
+  end
+end
