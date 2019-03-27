@@ -22,7 +22,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+If you are using this gem in conjunction with the [Genius rails2 fork]('https://github.com/Genius/rails2') include the following line in your Gemfile: 
+
+```ruby
+gem "rails2_ruby2", "~>1.0"
+```
+
+If you are not using the Genius rails2 fork but are instead using something like [rails 2.3 lts](https://github.com/makandra/rails/tree/2-3-lts) you will need to add `rails2_ruby2` to your Gemfile as specified above and manually include the patches by component, e.g.:
+
+```ruby
+require "rails2_ruby2/action_mailer"
+
+require "rails2_ruby2/action_pack"
+
+require "rails2_ruby2/action_view"
+
+require "rails2_ruby2/active_model"
+
+require "rails2_ruby2/active_record"
+
+require "rails2_ruby2/active_resource"
+
+require "rails2_ruby2/active_support"
+```
+
 
 ## Development
 
