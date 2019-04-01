@@ -6,7 +6,7 @@ ActiveRecord::ConnectionAdapters::PostgreSQLColumn.class_eval do
       if default =~ /\A'(-?\d+(\.\d*)?\)?)'::integer\z/i
         $1
       else
-        extract_value_from_default_without_negative_integer_support
+        extract_value_from_default_without_negative_integer_support(default)
       end
     end
 
